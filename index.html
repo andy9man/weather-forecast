@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Weather Forecast</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="app.css" />
+</head>
+<body>
+    <nav>
+        <label class="switch float-r">
+            <input id="tempToggle" type="checkbox" checked>
+            <span class="slider round"></span>
+        </label>
+        <form id="frmWeather">
+            <input id="iptCity" type="text" placeholder="Enter U.S. City" />
+            <p id="errorMessage"></p>
+        </form>
+    </nav>
+    <div id="weatherInformation">
+        <div id="cityWeatherInformation">
+            <h2 id="cityName" class="center"></h2>
+            <img id="weatherIcon" class="float-r" />
+            <p id="cityTemperature" class="font-large"></p>
+
+            <p id="cityCondition" class="uppercase font-normal border-bottom"></p>
+            <p id="cityTemperatureMinMax" class="font-normal float-l"></p>
+            <p id="cityWind" class="font-normal float-r"></p>
+
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.js"></script>
+</body>
+</html>

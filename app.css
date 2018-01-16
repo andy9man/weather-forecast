@@ -1,0 +1,164 @@
+* {
+    border: 0;
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+body {
+    color: #000;
+    font-size: 0.5em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+nav {
+    width: 100%;
+    background: #000000;
+    padding: 10px;
+    height: 45px;
+    color: #fff;
+}
+
+h2 {
+    font-size: 5.0em;
+    width: 100%;
+}
+
+.center {
+    text-align: center;
+}
+
+.float-l {
+    float: left;
+}
+
+.float-r {
+    float: right;
+}
+
+.font-large {
+    font-size: 10.0em;
+}
+
+.font-normal {
+    font-size: 2.0em;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.border-bottom{
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+}
+
+#iptCity {
+    background: url('images/search.png') no-repeat 10px 10px #2196F3;
+    padding: 10px 10px 10px 40px;
+    font-size: 2.0em;
+    font-weight: bolder;
+    color: #ffffff;
+    width: 275px;
+    margin: auto 0;
+}
+
+#iptCity::-webkit-input-placeholder {
+    font-weight: normal;
+    color: #E7ECEF;
+    font-size: .8em;
+    font-style: italic;
+}
+
+#iptCity:hover, #iptCity:focus {
+    border-bottom: 4px solid #ffffff;
+}
+
+#errorMessage {
+    color: red;
+    margin: 15px 0px 15px 15px;
+    font-style: italic;
+    display: inline;
+}
+
+#weatherInformation {
+    padding-top: 50px;
+    width: 100%;
+    height: 100%;
+}
+
+#cityWeatherInformation {
+    width: 600px;
+    background:rgba(255,255,255,0.5);
+    padding: 10px;
+    margin: auto;
+    overflow: auto;
+}
+
+#weatherIcon {
+    padding: 5px;
+    background: #2196F3;
+    border-radius: 50%;
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    left: -40px;
+  }
+
+  .switch input {display:none;}
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
