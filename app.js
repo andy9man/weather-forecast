@@ -63,7 +63,8 @@ function setWeather (weather) {
     document.getElementById("weatherIcon").src = weather.weatherIcon;
     document.getElementById("cityWeatherInformation").style.visibility = "visible";
 
-    setCookie('WeatherSearch', weather.search, 1);
+    setCookie('WeatherForecastSearch', weather.search, 1);
+    setStorage(window.localStorage, "WeatherForecastSearch", weather.search);
 }
 
 function getTemperature(weather){
@@ -85,6 +86,14 @@ function getMinMaxTemperature(weather){
 
 function setErrorMessage(message){
     document.getElementById("errorMessage").innerText = message;
+}
+
+function setStorage ( storage, key, value) {
+    storage.setItem( key, value );
+}
+
+function getStorage ( storage, key ){
+    return storage.getItem(key);
 }
 
 function setCookie(name, value, days){
@@ -140,6 +149,20 @@ function getWeatherBackground( weather ){
 window.onload = () => {
 
     let weather = undefined;
+    let storage = window.localStorage;
+    let storageValue = getStorage(storage, "WeatherForecastSearch");
+    if( storageValue ) {
+        document.getElementById("welcomeMessage").innerHTML = "Welcome Back! We must be awesome - you last searched " + storageValue;
+
+        weather = new Weather(storageValue);
+        weather.weatherLookup();
+        console.log(weather);
+    }
+    else {
+        document.getElementById("welcomeMessage").innerHTML = "Welcome, glad to have you!";
+    }
+
+    console.log( getStorage(storage, 'WeatherForecastSearch') );
 
     document.getElementById("iptCity").addEventListener('keyup', (e) => {
         if( e.key == "Enter" ) {
@@ -150,6 +173,7 @@ window.onload = () => {
             else{
                 weather = new Weather(searchValue);
                 weather.weatherLookup();
+                document.getElementById("welcomeMessage").innerHTML = "Nice search, why didn't we think of that?!";
                 console.log(weather);
             }
         }

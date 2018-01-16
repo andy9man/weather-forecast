@@ -23,6 +23,16 @@ nav {
     color: #fff;
 }
 
+footer {
+    position: fixed;
+    bottom: 0;
+    background: #000000;
+    padding: 10px;
+    height: 45px;
+    color: #fff;
+    width: 100%;
+}
+
 h2 {
     font-size: 5.0em;
     width: 100%;
@@ -89,6 +99,7 @@ h2 {
     padding-top: 50px;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 #cityWeatherInformation {
@@ -105,6 +116,11 @@ h2 {
     border-radius: 50%;
 }
 
+#welcomeMessage {
+    text-align: center;
+    font-size: 2.5em;
+    font-style: bold;
+}
 
 .switch {
     position: relative;
