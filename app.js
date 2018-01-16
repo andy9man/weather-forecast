@@ -60,8 +60,8 @@ function setWeather (weather) {
     document.getElementById("cityWind").innerHTML = "Wind: <b>" + weather.cityWind + " MPH</b>";
     document.getElementById("cityCondition").innerHTML = weather.cityCondDefined
     getWeatherBackground(weather.cityCond);
-    document.getElementById("weatherIcon").src = weather.weatherIcon
-    document.getElementById("weatherIcon").style.visibility = "visible";
+    document.getElementById("weatherIcon").src = weather.weatherIcon;
+    document.getElementById("cityWeatherInformation").style.visibility = "visible";
 
     setCookie('WeatherSearch', weather.search, 1);
 }
@@ -112,7 +112,6 @@ function getCookie(name) {
 function eraseCookie(name) {
     document.cookie = name+'=; Max-Age=-99999999;';
 }
-
 
 function getWeatherBackground( weather ){
     weather = weather.toLowerCase();
@@ -170,5 +169,6 @@ window.onload = () => {
         e.preventDefault();
     });
 
-    document.getElementById("weatherIcon").style.visibility = "hidden";
+    //document.getElementById("weatherIcon").style.visibility = "hidden";
+    document.getElementById("cityWeatherInformation").style.visibility = "hidden";
 }
